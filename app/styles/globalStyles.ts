@@ -7,7 +7,6 @@ const styles = css`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
   }
 
   body {
@@ -15,11 +14,14 @@ const styles = css`
     color: #e5e4e0;
     width: 100%;
     height: 100dvh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    a {
-      color: red;
+    text-align: center;
+
+    main {
+      height: 100%;
+    }
+
+    section {
+      min-height: 100%;
     }
   }
 `;

@@ -1,6 +1,6 @@
-import Transition from './components/Transition';
 import StyledComponentsRegistry from './lib/Registry';
 import GlobalStyles from './styles/globalStyles';
+import Header from './components/Header';
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -8,7 +8,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body>
         <StyledComponentsRegistry>
           <GlobalStyles />
-          <Transition>{children}</Transition>
+          <Header />
+          {children}
         </StyledComponentsRegistry>
       </body>
     </html>

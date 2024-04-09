@@ -1,7 +1,5 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
 import Icon from './Icon';
 
@@ -14,35 +12,17 @@ const TransPage = styled.div`
   height: 100dvh;
   width: 100%;
   position: absolute;
-  z-index: -1;
-  border-radius: 6.25rem;
+  top: 0;
+  left: 0;
 `;
 
-const variants = {
-  hidden: { y: '100%' },
-  exit: {
-    y: ['100%', 0, '-100%'],
-    scale: [0.75, 1, 0.75],
-    borderRadius: ['6.25rem', '0.625rem', '6.25rem'],
-    transition: { duration: 1.65, ease: [0.76, 0, 0.24, 1] },
-  },
-};
-
-const Transition = ({ children }: { children: React.ReactNode }) => {
-  const key = usePathname();
-
+const Transition = () => {
   return (
-    <AnimatePresence>
-      {children}
-      <TransPage
-        as={motion.div}
-        variants={variants}
-        initial='hidden'
-        exit='exit'
-        key={key}>
+    <>
+      <TransPage id='pageTransitionEl'>
         <Icon />
       </TransPage>
-    </AnimatePresence>
+    </>
   );
 };
 
